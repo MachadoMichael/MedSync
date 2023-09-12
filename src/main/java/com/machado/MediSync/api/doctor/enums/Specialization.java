@@ -1,0 +1,20 @@
+package com.machado.MediSync.api.doctor.enums;
+
+public enum Specialization {
+
+    INTERNAL_MEDICINE,
+    PEDIATRICS,
+    CARDIOLOGY,
+    DERMATOLOGY,
+    GASTROENTEROLOGY,
+    SURGERY,
+    NEUROLOGY,
+    ORTHOPEDICS,
+    OBSTETRICS_GYNECOLOGY,
+    ONCOLOGY,
+    RADIOLOGY,
+    ANESTHESIOLOGY,
+    PSYCHIATRY,
+    OPHTHALMOLOGY,
+    UROLOGY,
+}
