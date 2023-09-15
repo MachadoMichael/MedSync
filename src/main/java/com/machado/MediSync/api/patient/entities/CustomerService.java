@@ -1,6 +1,7 @@
 package com.machado.MediSync.api.patient.entities;
 
 import com.machado.MediSync.api.patient.enums.RiskRank;
+import com.machado.MediSync.api.patient.enums.Status;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -17,6 +18,8 @@ public class CustomerService implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
+    String patientId;
+    Status status;
     LocalDate prohibited;
     LocalDate exit;
     Double bloodPressure;
