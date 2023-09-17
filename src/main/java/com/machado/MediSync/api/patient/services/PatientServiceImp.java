@@ -32,8 +32,4 @@ public class PatientServiceImp implements PatientService{
        repository.delete(patient);
     }
 
-    @Override
-    public Patient update(Patient patient) {
-        return repository.save(patient);
-    }
 }

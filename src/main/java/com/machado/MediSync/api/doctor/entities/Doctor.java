@@ -17,4 +17,8 @@ public class Doctor extends Person implements Serializable {
 
     Specialization specialization;
     ServiceStatus serviceStatus;
+
+    public Doctor(String name, String cpf, String address) {
+        super(name, cpf, address);
+    }
 }

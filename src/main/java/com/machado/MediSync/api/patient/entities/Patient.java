@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,6 +21,14 @@ public class Patient extends Person implements Serializable {
     String info;
     String allergies;
     List<UUID> history;
+
+    public Patient(String name, String cpf, String address, BloodType bloodType, String info, String allergies) {
+        super(name, cpf, address);
+        this.bloodType = bloodType;
+        this.info = info;
+        this.allergies = allergies;
+        this.history = new ArrayList<>();
+    }
 
     public BloodType getBloodType() {
         return bloodType;

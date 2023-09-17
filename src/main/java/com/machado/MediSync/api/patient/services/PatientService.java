@@ -10,5 +10,4 @@ public interface PatientService {
     Patient getOne(String cpf);
     List<Patient> getAll();
     void delete(Patient patient);
-    Patient update(Patient patient);
 }
