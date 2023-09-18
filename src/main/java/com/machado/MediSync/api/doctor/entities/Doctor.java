@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.UUID;
 
 @Entity
 @Table(name = "DOCTORS")
@@ -18,7 +17,25 @@ public class Doctor extends Person implements Serializable {
     Specialization specialization;
     ServiceStatus serviceStatus;
 
-    public Doctor(String name, String cpf, String address) {
+    public Doctor(String name, String cpf, String address, Specialization specialization) {
         super(name, cpf, address);
+        this.specialization = specialization;
+        this.serviceStatus = ServiceStatus.OFF_DUTY;
+    }
+
+    public Specialization getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(Specialization specialization) {
+        this.specialization = specialization;
+    }
+
+    public ServiceStatus getServiceStatus() {
+        return serviceStatus;
+    }
+
+    public void setServiceStatus(ServiceStatus serviceStatus) {
+        this.serviceStatus = serviceStatus;
     }
 }

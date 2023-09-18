@@ -1,7 +1,11 @@
 package com.machado.MediSync.api;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 public abstract class Person {
     String name;
+    @Id
     String cpf;
     String address;
 

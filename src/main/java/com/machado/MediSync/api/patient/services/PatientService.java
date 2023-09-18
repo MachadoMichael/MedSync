@@ -1,6 +1,5 @@
 package com.machado.MediSync.api.patient.services;
 
-import com.machado.MediSync.api.patient.dtos.PatientDTO;
 import com.machado.MediSync.api.patient.entities.Patient;
 
 import java.util.List;

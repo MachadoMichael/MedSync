@@ -1,6 +1,5 @@
 package com.machado.MediSync.api.patient.services;
 
-import com.machado.MediSync.api.patient.dtos.PatientDTO;
 import com.machado.MediSync.api.patient.entities.Patient;
 import com.machado.MediSync.api.patient.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
