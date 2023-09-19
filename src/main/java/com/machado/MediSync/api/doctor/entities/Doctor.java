@@ -14,6 +14,9 @@ public class Doctor extends Person implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Integer id;
     Specialization specialization;
     ServiceStatus serviceStatus;
 
@@ -21,6 +24,14 @@ public class Doctor extends Person implements Serializable {
         super(name, cpf, address);
         this.specialization = specialization;
         this.serviceStatus = ServiceStatus.OFF_DUTY;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Specialization getSpecialization() {

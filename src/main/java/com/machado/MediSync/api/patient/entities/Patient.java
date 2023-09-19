@@ -17,6 +17,9 @@ public class Patient extends Person implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Integer id;
     BloodType bloodType;
     String info;
     String allergies;
@@ -28,6 +31,14 @@ public class Patient extends Person implements Serializable {
         this.info = info;
         this.allergies = allergies;
         this.history = new ArrayList<>();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public BloodType getBloodType() {

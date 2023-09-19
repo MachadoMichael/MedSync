@@ -1,34 +1,32 @@
 package com.machado.MediSync.api.patient.services;
 
 import com.machado.MediSync.api.patient.entities.Patient;
-import com.machado.MediSync.api.patient.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class PatientServiceImp implements PatientService{
+public class PatientServiceImp implements PatientService {
 
     @Autowired
-    PatientRepository repository;
+    PatientService service;
 
     @Override
     public Patient save(Patient patient) {
-        return repository.save(patient);
+        return service.save(patient);
     }
 
     @Override
     public Patient getOne(String cpf) {
-       return repository.getByCpf(cpf);
+        return service.getOne(cpf);
     }
 
     @Override
     public List<Patient> getAll() {
-        return repository.findAll();
+        return service.getAll();
     }
 
     @Override
     public void delete(Patient patient) {
-       repository.delete(patient);
+        service.delete(patient);
     }
-
 }
