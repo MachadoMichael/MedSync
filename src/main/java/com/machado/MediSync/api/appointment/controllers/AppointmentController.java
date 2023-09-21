@@ -3,12 +3,14 @@ package com.machado.MediSync.api.appointment.controllers;
 import com.machado.MediSync.api.appointment.dtos.AppointmentDTO;
 import com.machado.MediSync.api.appointment.entities.Appointment;
 import com.machado.MediSync.api.appointment.services.AppointmentService;
+import com.machado.MediSync.api.patient.enums.Status;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -28,20 +30,20 @@ public class AppointmentController {
         return ResponseEntity.status(HttpStatus.OK).body(service.getOne(cpf));
     }
 
-    @PostMapping
-    public ResponseEntity<Appointment> save(@RequestBody AppointmentDTO appointmentDTO) {
-        Appointment appointment = new Appointment(
+    @GetMapping("/queue/riskClassification")
+    public ResponseEntity<List<Appointment>> getQueueRiskClassification() {
+        List<Appointment> queueRiskClassification = service.getAll().stream()
+                .filter(appointment -> appointment.getStatus().equals(Status.RISK_CLASSIFICATION)).toList();
+        queueRiskClassification.sort(Comparator.comparing(Appointment::getProhibited));
 
-        );
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.save(appointment));
+        return ResponseEntity.status(HttpStatus.OK).body(queueRiskClassification);
     }
 
-    @PutMapping
-    public ResponseEntity<Appointment> updateOne(@RequestBody AppointmentDTO appointmentDTO) {
-        Appointment selectedAppointment = service.getOne(appointmentDTO.cpf());
-        BeanUtils.copyProperties(appointmentDTO, selectedAppointment);
-        return ResponseEntity.status(HttpStatus.OK).body(service.save(selectedAppointment));
+    @PostMapping
+    public ResponseEntity<Appointment> save(@RequestBody AppointmentDTO appointmentDTO) {
+        Appointment appointment = new Appointment();
+        BeanUtils.copyProperties(appointmentDTO, appointment);
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.save(appointment));
     }
 
     @DeleteMapping("/{id}")
