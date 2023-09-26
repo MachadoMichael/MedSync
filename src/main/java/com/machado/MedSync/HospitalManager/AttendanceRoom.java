@@ -5,20 +5,20 @@ import com.machado.MedSync.api.doctor.entities.Doctor;
 import java.util.List;
 
 public class AttendanceRoom {
-    private Doctor resposibleDoctor;
+    private Doctor responsibleDoctor;
     private RoomStatus roomStatus;
 
-    public AttendanceRoom(Doctor resposibleDoctor, RoomStatus roomStatus) {
-        this.resposibleDoctor = resposibleDoctor;
+    public AttendanceRoom(Doctor responsibleDoctor, RoomStatus roomStatus) {
+        this.responsibleDoctor = responsibleDoctor;
         this.roomStatus = roomStatus;
     }
 
-    public Doctor getResposibleDoctor() {
-        return resposibleDoctor;
+    public Doctor getResponsibleDoctor() {
+        return responsibleDoctor;
     }
 
-    public void setResposibleDoctor(Doctor resposibleDoctor) {
-        this.resposibleDoctor = resposibleDoctor;
+    public void setResponsibleDoctor(Doctor responsibleDoctor) {
+        this.responsibleDoctor = responsibleDoctor;
     }
 
     public RoomStatus getRoomStatus() {
