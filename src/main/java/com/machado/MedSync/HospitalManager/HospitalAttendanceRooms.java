@@ -1,7 +1,10 @@
 package com.machado.MedSync.HospitalManager;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public class HospitalAttendanceRooms {
     private List<AttendanceRoom> internalMedicineRoom;
     private List<AttendanceRoom> pediatricRoom;
@@ -16,6 +19,9 @@ public class HospitalAttendanceRooms {
     private List<AttendanceRoom> radiologyRoom;
     private List<AttendanceRoom> anesthesiologyRoom;
     private List<AttendanceRoom> urologyRoom;
+    private List<AttendanceRoom>  ophthalmology;
+    private List<AttendanceRoom>  psychiatry;
+
 
     public HospitalAttendanceRooms(List<AttendanceRoom> internalMedicineRoom,
                                    List<AttendanceRoom> pediatricRoom,
@@ -29,7 +35,7 @@ public class HospitalAttendanceRooms {
                                    List<AttendanceRoom> oncologyRoom,
                                    List<AttendanceRoom> radiologyRoom,
                                    List<AttendanceRoom> anesthesiologyRoom,
-                                   List<AttendanceRoom> urologyRoom) {
+                                   List<AttendanceRoom> urologyRoom, List<AttendanceRoom> ophthalmology, List<AttendanceRoom> psychiatry) {
         this.internalMedicineRoom = internalMedicineRoom;
         this.pediatricRoom = pediatricRoom;
         this.cardiologyRoom = cardiologyRoom;
@@ -43,6 +49,18 @@ public class HospitalAttendanceRooms {
         this.radiologyRoom = radiologyRoom;
         this.anesthesiologyRoom = anesthesiologyRoom;
         this.urologyRoom = urologyRoom;
+        this.ophthalmology = ophthalmology;
+        this.psychiatry = psychiatry;
+    }
+
+
+
+    public List<AttendanceRoom> getOphthalmology() {
+        return ophthalmology;
+    }
+
+    public void setOphthalmology(List<AttendanceRoom> ophthalmology) {
+        this.ophthalmology = ophthalmology;
     }
 
     public List<AttendanceRoom> getInternalMedicineRoom() {
@@ -147,5 +165,13 @@ public class HospitalAttendanceRooms {
 
     public void setUrologyRoom(List<AttendanceRoom> urologyRoom) {
         this.urologyRoom = urologyRoom;
+    }
+
+    public List<AttendanceRoom> getPsychiatry() {
+        return psychiatry;
+    }
+
+    public void setPsychiatry(List<AttendanceRoom> psychiatry) {
+        this.psychiatry = psychiatry;
     }
 }
