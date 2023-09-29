@@ -1,4 +1,4 @@
-package com.machado.MedSync.HospitalManager;
+package com.machado.MedSync.HospitalManager.entities;
 
 import com.machado.MedSync.api.appointment.entities.Appointment;
 import org.springframework.stereotype.Component;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class QueuesManager {
+public class SpecializationQueues {
     private List<Appointment> internalMedicine;
     private List<Appointment> pediatric;
     private List<Appointment> cardiology;

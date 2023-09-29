@@ -1,8 +1,7 @@
-package com.machado.MedSync.HospitalManager;
+package com.machado.MedSync.HospitalManager.entities;
 
+import com.machado.MedSync.HospitalManager.enums.RoomStatus;
 import com.machado.MedSync.api.doctor.entities.Doctor;
-
-import java.util.List;
 
 public class AttendanceRoom {
     private Doctor responsibleDoctor;

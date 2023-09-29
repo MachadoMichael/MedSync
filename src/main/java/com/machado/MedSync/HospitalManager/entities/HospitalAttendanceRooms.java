@@ -1,4 +1,4 @@
-package com.machado.MedSync.HospitalManager;
+package com.machado.MedSync.HospitalManager.entities;
 
 import org.springframework.stereotype.Component;
 
