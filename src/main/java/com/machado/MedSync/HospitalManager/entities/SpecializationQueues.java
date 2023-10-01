@@ -162,4 +162,68 @@ public class SpecializationQueues {
     public void setPsychiatry(Appointment psychiatry) {
         this.psychiatry.add(psychiatry);
     }
+
+    public void setInternalMedicine(List<Appointment> internalMedicine) {
+        this.internalMedicine = internalMedicine;
+    }
+
+    public void setPediatric(List<Appointment> pediatric) {
+        this.pediatric = pediatric;
+    }
+
+    public void setCardiology(List<Appointment> cardiology) {
+        this.cardiology = cardiology;
+    }
+
+    public void setDermatology(List<Appointment> dermatology) {
+        this.dermatology = dermatology;
+    }
+
+    public void setGastroenterology(List<Appointment> gastroenterology) {
+        this.gastroenterology = gastroenterology;
+    }
+
+    public void setSurgery(List<Appointment> surgery) {
+        this.surgery = surgery;
+    }
+
+    public void setNeurology(List<Appointment> neurology) {
+        this.neurology = neurology;
+    }
+
+    public void setOrthopedic(List<Appointment> orthopedic) {
+        this.orthopedic = orthopedic;
+    }
+
+    public void setObstetricGynecology(List<Appointment> obstetricGynecology) {
+        this.obstetricGynecology = obstetricGynecology;
+    }
+
+    public void setOncology(List<Appointment> oncology) {
+        this.oncology = oncology;
+    }
+
+    public void setRadiology(List<Appointment> radiology) {
+        this.radiology = radiology;
+    }
+
+    public void setAnesthesiology(List<Appointment> anesthesiology) {
+        this.anesthesiology = anesthesiology;
+    }
+
+    public void setUrology(List<Appointment> urology) {
+        this.urology = urology;
+    }
+
+    public void setOphthalmology(List<Appointment> ophthalmology) {
+        this.ophthalmology = ophthalmology;
+    }
+
+    public void setPsychiatry(List<Appointment> psychiatry) {
+        this.psychiatry = psychiatry;
+    }
+
+    public void setQueueManagerLists(List<List<Appointment>> queueManagerLists) {
+        this.queueManagerLists = queueManagerLists;
+    }
 }

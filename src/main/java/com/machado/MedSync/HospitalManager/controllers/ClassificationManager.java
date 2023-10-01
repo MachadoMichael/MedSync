@@ -1,13 +1,27 @@
 package com.machado.MedSync.HospitalManager.controllers;
 
+import com.machado.MedSync.HospitalManager.entities.SpecializationQueues;
 import com.machado.MedSync.api.appointment.entities.Appointment;
 import com.machado.MedSync.api.patient.enums.RiskRank;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class ClassificationManager {
+
+    private SpecializationQueues queues;
+
+    @Scheduled(fixedRate = 5000)
+    public void queueHandler(){
+        QueuesSetter queuesSetter = new QueuesSetter();
+        queuesSetter.checkQueue();
+
+
+//        queuesSetter.getSpecializationQueues().setAnesthesiology(setPriority())
+    }
+
 
     public List<Appointment> orderByProhibited(List<Appointment> appointments) {
         appointments.sort(Comparator.comparing(Appointment::getProhibited, Comparator.reverseOrder()));
@@ -38,5 +52,9 @@ public class ClassificationManager {
         sortedQueue.sort(Comparator.comparing(Appointment::getProhibited, Comparator.reverseOrder()));
 
         return sortedQueue;
+    }
+
+    public SpecializationQueues getQueues() {
+        return queues;
     }
 }

@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, String> {
-    Patient getByCpf(String cpf);
+    Patient getByCpf(String cpf); 
 }

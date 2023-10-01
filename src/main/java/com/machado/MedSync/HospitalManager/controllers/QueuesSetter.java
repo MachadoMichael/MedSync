@@ -17,10 +17,8 @@ public class QueuesSetter {
     @Autowired
     AppointmentService appointmentService;
 
-    private SpecializationQueues waitingForService;
+    private SpecializationQueues specializationQueues;
 
-
-    @Scheduled(fixedRate = 5000)
     public void checkQueue() {
         List<Appointment> appointments = appointmentService.getAll().stream()
                 .filter(appointment -> !appointment.getStatus().equals(Status.FINISHED)).toList();
@@ -33,7 +31,7 @@ public class QueuesSetter {
             List<Appointment> queueService = appointments.stream()
                     .filter(appointment -> appointment.getStatus().equals(Status.WAITING_FOR_SERVICE)).toList();
 
-            waitingForService = setQueueResponsible(queueService);
+            specializationQueues = setQueueResponsible(queueService);
 
         }
     }
@@ -66,9 +64,7 @@ public class QueuesSetter {
         return queuesManager;
     }
 
-
-
-
-
-
+    public SpecializationQueues getSpecializationQueues() {
+        return specializationQueues;
+    }
 }
