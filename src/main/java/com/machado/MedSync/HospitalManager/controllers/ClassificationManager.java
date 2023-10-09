@@ -14,14 +14,32 @@ public class ClassificationManager {
     private SpecializationQueues queues;
 
     @Scheduled(fixedRate = 5000)
-    public void queueHandler(){
+    public void queueHandler() {
         QueuesSetter queuesSetter = new QueuesSetter();
         queuesSetter.checkQueue();
+        SpecializationQueues queueSorted = scanQueues(queuesSetter.getSpecializationQueues());
 
-
-//        queuesSetter.getSpecializationQueues().setAnesthesiology(setPriority())
     }
 
+
+    private SpecializationQueues scanQueues(SpecializationQueues specializationQueues) {
+        orderByProhibited(specializationQueues.getAnesthesiology());
+        orderByProhibited(specializationQueues.getCardiology());
+        orderByProhibited(specializationQueues.getDermatology());
+        orderByProhibited(specializationQueues.getNeurology());
+        orderByProhibited(specializationQueues.getGastroenterology());
+        orderByProhibited(specializationQueues.getInternalMedicine());
+        orderByProhibited(specializationQueues.getObstetricGynecology());
+        orderByProhibited(specializationQueues.getOncology());
+        orderByProhibited(specializationQueues.getOphthalmology());
+        orderByProhibited(specializationQueues.getOrthopedic());
+        orderByProhibited(specializationQueues.getPediatric());
+        orderByProhibited(specializationQueues.getPsychiatry());
+        orderByProhibited(specializationQueues.getRadiology());
+        orderByProhibited(specializationQueues.getUrology());
+        orderByProhibited(specializationQueues.getSurgery());
+        return specializationQueues;
+    }
 
     public List<Appointment> orderByProhibited(List<Appointment> appointments) {
         appointments.sort(Comparator.comparing(Appointment::getProhibited, Comparator.reverseOrder()));
